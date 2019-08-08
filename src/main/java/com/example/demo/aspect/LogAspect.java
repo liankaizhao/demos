@@ -1,10 +1,12 @@
 package com.example.demo.aspect;
 
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
+@Slf4j
 public class LogAspect {
 
 
@@ -23,6 +25,8 @@ public class LogAspect {
     public void afterService(Operation operation) {
 
         System.out.println("方法执行完成"+operation.value());
+        log.info("这是我的测试");
+
     }
 
 
